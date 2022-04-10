@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/varelaround/v18/w8gdH283Tvk__Lua32TysjIfp8uPLdshZg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #121620;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+header .buttons {
+
+}
+header .buttons img {
+    max-height: 30px;
+    cursor: pointer;
+}
+main {
+    max-width: 8in;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+#object {
+    font-size: 50px;
+    margin: 20px 0 40px;
+    border-bottom: dashed 2px white;
+    display: inline-block;
+}
+
+input, button {
+    background: none;
+    border: solid 2px white;
+    border-radius: 5px;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+}
+input {
+    outline: 0;
+    width: 150px;
+    padding: 10px;
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+button {
+    padding: 10px 15px;
+    background: 0;
+    outline: 0;
+    cursor: pointer;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    transition: color 0.3s;
+}
+button:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+}
+button:hover, button:focus, button:active {
+    color: #121620;
+}
+button:hover:before, button:focus:before, button:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+button:disabled {
+    opacity: 0.8;
+    cursor: default;
+}
+button:disabled:hover {
+    color: white;
+}
+button:disabled:before {
+    display: none;
+}
+#victory {
+    display: none;
+}
+table {
+    margin: 20px auto 0;
+    border-collapse: collapse;
+}
+td {
+    min-width: 100px;
+    padding: 5px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: vertical;
+}
+.popup .content {
+    max-width: 4in;
+    max-height: 90%;
+    overflow: scroll;
+    margin: 10px;
+    padding: 15px 20px 20px;
+    background: #234;
+    border-radius: 30px;
+}
+.popup .close-button {
+    float: right;
+    height: 20px;
+    cursor: pointer;
+}
+.popup p {
+    margin: 10px 0;
+}
+.popup button {
+    margin-top: 5px;
+}
+.popup.shown {
+    display: flex;
+}
+
+#victory {
+    margin: 10px 0;
+}
+#share {
+    vertical-align: center;
+    margin: 15px 0 10px;
+}
+#share svg {
+    fill: white;
+    width: 20px;
+    transition: .3s;
+    transform: translateY(3px);
+}
+#share:hover svg {
+    fill: #234;
+}
+#stats .stat {
+    display: inline-block;
+    width: 90px;
+    vertical-align: top;
+    text-align: center;
+}
+#stats .stat .number {
+    font-size: 40px;
+}
